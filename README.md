@@ -1,4 +1,4 @@
-# UniKnect Gen1 Pro V2
+# 【Quectel Product Experience Program】Equipment Box Monitoring Terminal Based on UniKnect Gen1 Pro - V2
 
 版本：V2.2.0-cloud-window（2026-10-21）。本目录是可单独移动的完整应用项目。
 
