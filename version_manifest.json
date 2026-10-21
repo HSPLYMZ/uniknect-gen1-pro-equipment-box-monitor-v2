@@ -1,0 +1,666 @@
+{
+  "version": "V2.2.0-cloud-window",
+  "date": "2026-10-21",
+  "profile": "ble-pose-cloud-window",
+  "board_directory": "/flash/cabinet_monitor_v2",
+  "startup": "device/startup_v2.py",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 183,
+      "sha256": "be258e7d7c3a810bbeacf6d31b0350b595c688d8781ff2df221fc5400f3221d0"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 411,
+      "sha256": "b9c9b58d7c5e3fe513092ccdfeef3efcc40f24fe091b2963e392bfc9ee87432b"
+    },
+    {
+      "path": "PUBLISHING.md",
+      "bytes": 3607,
+      "sha256": "c23c0e14e837570531827a5bb519d02e7c2de60049c5ca3c97c4360cb75c7507"
+    },
+    {
+      "path": "README.md",
+      "bytes": 11796,
+      "sha256": "d98beb1ea5d8ebb623ee7613df338b84a8ec9ba3d0cd99e2a60faef4dc0ad058"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 2047,
+      "sha256": "44c8b8967a8ccf3464811458c49b29afe3c502e5a69ae8b0d75297cbaae42f7c"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 21,
+      "sha256": "63257dda58ba30d3bd27d22b96a7c9b0babd7595d4ffcab01fa749cc2448f549"
+    },
+    {
+      "path": "cloud_debug/README.md",
+      "bytes": 3004,
+      "sha256": "d459eb18513a0e5488b31d3df1f808f3fa2d81265ffb200ed6636c82f4ca5e7d"
+    },
+    {
+      "path": "cloud_debug/config_example.py",
+      "bytes": 442,
+      "sha256": "e457c41af9a61549c8d0581d889c795d25ac8a322d8e8595c42cf0956d11d222"
+    },
+    {
+      "path": "cloud_debug/probe.py",
+      "bytes": 13846,
+      "sha256": "bb441d5a6076ce289c3aec59c22ac48afc7d5b1b206d73d0cb1fbc8b16695737"
+    },
+    {
+      "path": "cloud_debug/run_probe.py",
+      "bytes": 6821,
+      "sha256": "84072b0c3af6b0625421687b8d71529665612172049f4e12be44a8338d519b99"
+    },
+    {
+      "path": "device/assets/logo_160x20.bin",
+      "bytes": 6400,
+      "sha256": "761f7240a05b4f542a83cb9de2d7f5d8601fa5d432f57797a4e79cb50fe0a5c5"
+    },
+    {
+      "path": "device/audio_recorder.py",
+      "bytes": 6234,
+      "sha256": "ffe403730911f4a0624d6c8c2fc11b176ed01c3c90ce0f85a59cac1e76b5df77"
+    },
+    {
+      "path": "device/ble_telemetry.py",
+      "bytes": 9277,
+      "sha256": "c8af7c5ae023cbd38438870e3295e2e6df97fcaef74df615a9eada62d117de15"
+    },
+    {
+      "path": "device/cloud_policy.py",
+      "bytes": 5750,
+      "sha256": "ff4a10466b00be6211f16cdc3ad8ae83589d1977a0119f357d135e8aa3d9ed97"
+    },
+    {
+      "path": "device/cloud_private.example.json",
+      "bytes": 166,
+      "sha256": "efd8a88bd469fd0c14bf5a264dc1775663d7f4ce8cb2cdb412461ecc9f8e8c8f"
+    },
+    {
+      "path": "device/config_template.py",
+      "bytes": 3240,
+      "sha256": "3cdcb3b4c4b19ed5e7c540dbc40a7829e130c7bf5016616c37ba5049f7e03d94"
+    },
+    {
+      "path": "device/display.py",
+      "bytes": 11568,
+      "sha256": "7161c8a4fb70ac600e35737d08e029f28d26c38b0daded64e368a1023df71cfa"
+    },
+    {
+      "path": "device/events.py",
+      "bytes": 7388,
+      "sha256": "32eecb77be9046412b6ae3af1943c36f7d25f0f844e9421a4233c32c6bd7f1b2"
+    },
+    {
+      "path": "device/location.py",
+      "bytes": 3569,
+      "sha256": "026bae76a96ac603bccbee96140fb9fa36c16d72698e37f86a14f741503cc96b"
+    },
+    {
+      "path": "device/logo_asset.py",
+      "bytes": 297,
+      "sha256": "ec98835774fa723e775044fc946c6b7d15be3c4f8c46a89f8383abfa7807ac34"
+    },
+    {
+      "path": "device/main.py",
+      "bytes": 13607,
+      "sha256": "1d33cb14e3b77dbc1b73889641d9e7579fd8525fac7b7aea0ddbcc6226cd7afd"
+    },
+    {
+      "path": "device/qth_compat.py",
+      "bytes": 1481,
+      "sha256": "c3b70d47637ccbbdef02377398c0a0a867d19896de1946ba82edc2ee59f3dcf8"
+    },
+    {
+      "path": "device/qth_transport.py",
+      "bytes": 8724,
+      "sha256": "facc6880eb182b1a2e25d5b952a9104a8437d72dfe4d98dc3e0b3e29fc2b14e1"
+    },
+    {
+      "path": "device/queue_store.py",
+      "bytes": 1012,
+      "sha256": "72909e3bb236032fd545084c7ccff2d2a3ec6a98b8138203e000e4a6a2347fc7"
+    },
+    {
+      "path": "device/runtime.py",
+      "bytes": 1161,
+      "sha256": "83a5c33b680d3cc7cf57aa8b9c538f5dbfae21d11e28bd6b14cb32be1041dbf7"
+    },
+    {
+      "path": "device/sd_store.py",
+      "bytes": 6398,
+      "sha256": "a23e2c718d79fef90300be1cc0d9400ea6768cdc0b600ceab3b8be011cd4db58"
+    },
+    {
+      "path": "device/sensors.py",
+      "bytes": 4411,
+      "sha256": "16b4bc72e2b2dd7e3010bedeefa6597aa72944dcac3a35d6b74dfa5f4b7f33e7"
+    },
+    {
+      "path": "device/startup_v2.py",
+      "bytes": 4818,
+      "sha256": "2b2cd8cb88898bd08aff211443c7960b61cd4e407fdddcabf06c2a501f374378"
+    },
+    {
+      "path": "device/transport.py",
+      "bytes": 4804,
+      "sha256": "c84cb457272ee12e685b7c0eaba176981c84cbe9d955be33b02120fac5f71e61"
+    },
+    {
+      "path": "host/analyze_cloud_log.py",
+      "bytes": 6352,
+      "sha256": "1643ef086a6e0f959ed518dcf02837e78c0a5575543304a04f164b07f8e4681e"
+    },
+    {
+      "path": "host/deploy_board.py",
+      "bytes": 7707,
+      "sha256": "2e0471e75a0142f57a3a3bf3d0699b32015ba528e98d4a78af2e106d547d2519"
+    },
+    {
+      "path": "host/observe_board.py",
+      "bytes": 1666,
+      "sha256": "ebc3874011d7f9b4bf5513aa4d88f01cd163178675c8275bc1a2dab276f96d1e"
+    },
+    {
+      "path": "host/resident_board.py",
+      "bytes": 13032,
+      "sha256": "30808001ebc5c9fae2d3d52ffb1057c7760a50f181df6f33d610ca6d30b5dc2e"
+    },
+    {
+      "path": "host/serial_log.py",
+      "bytes": 1378,
+      "sha256": "befd33da2105e2bb136983d453d12b154c16f92d08f046f90febd8947a6c8c31"
+    },
+    {
+      "path": "licenses/UniKnect-Apache-2.0.txt",
+      "bytes": 11558,
+      "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 14,
+      "sha256": "0b81718d1cbe8a7696e45a9388c9205272b5e345cd79d0cf1ccfb7a9fd1925e9"
+    },
+    {
+      "path": "tests/README.md",
+      "bytes": 1118,
+      "sha256": "6298ec9b7a5247849a5cfe17700d75d0049af953afb54ef261d2199e31290fc4"
+    },
+    {
+      "path": "tests/support.py",
+      "bytes": 345,
+      "sha256": "780590a3f0845f093471823fa695f1cf387591fd9c4666e478e73bab3bac4689"
+    },
+    {
+      "path": "tests/test_ble.py",
+      "bytes": 7271,
+      "sha256": "e364395b5069d2eec819c09a6f3d65f150f37fdf9933022c5f5f4a054aa16797"
+    },
+    {
+      "path": "tests/test_cloud_log.py",
+      "bytes": 3621,
+      "sha256": "41a7e26ba5d8d4a28c4af4e72e1a14e14714a39dd78c74dbb2c18563b6aff326"
+    },
+    {
+      "path": "tests/test_cloud_policy.py",
+      "bytes": 5068,
+      "sha256": "1ef88793d97fc214a2096449bd48d2027a30ddbdfb6256d88d726bfecdd42f78"
+    },
+    {
+      "path": "tests/test_cloud_ui_worker.py",
+      "bytes": 4878,
+      "sha256": "9668109de1f07245acff28261a02143dd70b3f55a316a6998b7dbf90b7a66387"
+    },
+    {
+      "path": "tests/test_logic.py",
+      "bytes": 5034,
+      "sha256": "b9db9f7495d9d12d22d60416067e23ac113dd79d48ff14be8dbb95cab4d554ae"
+    },
+    {
+      "path": "tests/test_pose_sensor.py",
+      "bytes": 1272,
+      "sha256": "c078e9e20a378e00a3f5e0c03c02587a9dd757815d106d3a2c4e31bcbc65815c"
+    },
+    {
+      "path": "tests/test_release_review.py",
+      "bytes": 6621,
+      "sha256": "dd2380abb87e0992ce282565d13ce838653060c0d86e7835cc4efda23763c6a2"
+    },
+    {
+      "path": "tests/test_stable.py",
+      "bytes": 9551,
+      "sha256": "697261f40bf9137a35437acb957b7011c41040861db17e6bf1bad78ff211557f"
+    },
+    {
+      "path": "tests/test_ui.py",
+      "bytes": 15345,
+      "sha256": "565bdc070f1a2d4bccb67151b9360f41f0702dbc235cd91b54956725f94db10a"
+    },
+    {
+      "path": "web/README.md",
+      "bytes": 3692,
+      "sha256": "bc8e2a901c64ccfe3dddfbcb6b14034ae1ea067654c5378f18f738b40574aac9"
+    },
+    {
+      "path": "web/dist/app.mjs",
+      "bytes": 14535,
+      "sha256": "0270c101992e231fc5c1349047364ee3ec5e9291e99dbe62d08896ad88ef18fc"
+    },
+    {
+      "path": "web/dist/connection.mjs",
+      "bytes": 2174,
+      "sha256": "3884cc4cbad26969bcc3f1f678956138de112152b0a87db4101ac3362ba0aace"
+    },
+    {
+      "path": "web/dist/index.html",
+      "bytes": 8039,
+      "sha256": "72a3ec1e1f762b9b9c491e5d3673f9d71c3baa5b4da3507b02ba0a6adaaa8711"
+    },
+    {
+      "path": "web/dist/pose-math.mjs",
+      "bytes": 2477,
+      "sha256": "583f2a9d76e93582e9696ecfb26aa36cf888933414b020f55fca4781227b5efe"
+    },
+    {
+      "path": "web/dist/pose-view.mjs",
+      "bytes": 4100,
+      "sha256": "1f44fbeecadd36ee72b44461928d92159872d04374039ca15d6d904dd4e0b8fe"
+    },
+    {
+      "path": "web/dist/pose.mjs",
+      "bytes": 3922,
+      "sha256": "576909bbce039524c88de065b694f0ab0090543d3845ab7c032be902b318a541"
+    },
+    {
+      "path": "web/dist/protocol.mjs",
+      "bytes": 1775,
+      "sha256": "89c7d6dd7b30ba33dff48238b0aafbcf12e4a91114f8784d53da58efe8ba4990"
+    },
+    {
+      "path": "web/dist/render-loop.mjs",
+      "bytes": 838,
+      "sha256": "840981d51f2b0a18ce61b601dc707d7d12a8f1ff2c9b732ef3ce3a1fb709a854"
+    },
+    {
+      "path": "web/dist/styles.css",
+      "bytes": 12092,
+      "sha256": "93a5b508800063553e4108c3297bce3f41e16b8df00e3f333cac97dd4f30b036"
+    },
+    {
+      "path": "web/dist/vendor/OrbitControls.js",
+      "bytes": 40767,
+      "sha256": "30386f7141d5ce5d5e0a3ab643e4eb16265f4564466108105ce449857f62fdda"
+    },
+    {
+      "path": "web/dist/vendor/README.md",
+      "bytes": 857,
+      "sha256": "8351fe6842ff580e8fb4c325e06ca23275e732210d6b2c5adaf86cf39b3aac44"
+    },
+    {
+      "path": "web/dist/vendor/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+    },
+    {
+      "path": "web/dist/vendor/three.core.js",
+      "bytes": 1458113,
+      "sha256": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6"
+    },
+    {
+      "path": "web/dist/vendor/three.module.js",
+      "bytes": 662772,
+      "sha256": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea"
+    },
+    {
+      "path": "web/test_app.mjs",
+      "bytes": 7447,
+      "sha256": "82e5e30e73719861608791e71bf0e1d769d749e25e97d19e96bc567f4f0d28c7"
+    },
+    {
+      "path": "web/test_connection.mjs",
+      "bytes": 2831,
+      "sha256": "1f888f3ab8cfa32ce9c9aabab41658632222f0395c43a77d3ae46e76a2cf55da"
+    },
+    {
+      "path": "web/test_pose.mjs",
+      "bytes": 1946,
+      "sha256": "b327535cde70885ed23318f749ba77e0aa25fa073b954b6318e9ef0f3dba97e2"
+    },
+    {
+      "path": "web/test_protocol.mjs",
+      "bytes": 1717,
+      "sha256": "bda8a6836940fb4b5cb06a6284dcf500324091508f8896452279b1d1721a9b06"
+    },
+    {
+      "path": "web/test_render_loop.mjs",
+      "bytes": 1750,
+      "sha256": "5f9e99699ad538f83e881c6dbcc34bf5c3ab269bfb586bae59891f88c18973b3"
+    }
+  ],
+  "optional_cloud_probe": {
+    "status": "independent_board_platform_app_data_verified",
+    "entry": "cloud_debug/run_probe.py",
+    "property_ids": {
+      "temperature": 2,
+      "humidity": 3,
+      "light_adc": 4,
+      "valid_mask": 5
+    },
+    "private_config_excluded": true,
+    "device_key": "cabinet01",
+    "last_test_date": "2026-10-20",
+    "report_calls": 24,
+    "send_return_type": "NoneType",
+    "local_ble_restored_healthy": true,
+    "platform_receipt_verified": true,
+    "device_sn": "cabinet01",
+    "app_binding_user_confirmed": true,
+    "app_live_data_user_confirmed": true,
+    "permanent_cloud_startup_integrated": true,
+    "scope": "historical_independent_probe; current diagnostic capped at 12 calls"
+  },
+  "excluded_private": [
+    "device/config.py",
+    "device/cloud_private.json",
+    "cloud_debug/config_private.py",
+    "cloud_debug/logs/",
+    "backups/"
+  ],
+  "resident_cloud": {
+    "enabled_by": "private /flash/cloud_private.json",
+    "device_key": "cabinet01",
+    "business_windows_minutes": [
+      [
+        5,
+        7
+      ],
+      [
+        10,
+        12
+      ],
+      [
+        15,
+        17
+      ],
+      [
+        20,
+        22
+      ],
+      [
+        25,
+        27
+      ]
+    ],
+    "interval_s": 10,
+    "stop_after_s": 1800,
+    "max_calls_per_boot": 60,
+    "offline_replay": false,
+    "keep_connection_after_end": true,
+    "mqtt_ping_interval_s": 60,
+    "platform_quota_verified_on": "2026-10-20",
+    "platform_units_per_device_day": 1500,
+    "platform_counting": "successful up/down messages, round up every 512 bytes; protocol heartbeat free",
+    "budget": {
+      "path": "/flash/cloud_budget.json",
+      "capacity_units": 240,
+      "refill_units_per_powered_day": 600,
+      "reserved_units_per_call": 2,
+      "max_managed_units_in_24h": 840,
+      "represents_platform_balance": false
+    },
+    "lcd_pages": 4,
+    "signal_units": {
+      "rsrp": "dBm",
+      "sinr": "dB (raw / 2 - 23.5)"
+    },
+    "firmware": "UniKnect_MicroPython_F413ZH_v1.6.0_Beta20260721",
+    "verification": {
+      "date": "2026-10-21",
+      "runtime_files_readback_verified": 17,
+      "launcher_and_v1_fallback_verified": true,
+      "flash_free_bytes": 14336,
+      "local_tests_passed": 69,
+      "hardware_cycle": {
+        "status": "pass_complete_cycle",
+        "complete_cycle_verified": true,
+        "sdk_delivery_semantics": "CALLED is unconfirmed; verify platform separately",
+        "business_calls": 60,
+        "calls_by_window": [
+          12,
+          12,
+          12,
+          12,
+          12
+        ],
+        "slots": [
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161
+        ],
+        "all_slots_in_allowed_windows": true,
+        "no_duplicate_slots": true,
+        "attempt_sequence_valid": true,
+        "phase_transitions": [
+          "WAIT",
+          "REPORT",
+          "PAUSE",
+          "REPORT",
+          "PAUSE",
+          "REPORT",
+          "PAUSE",
+          "REPORT",
+          "PAUSE",
+          "REPORT",
+          "PAUSE",
+          "ENDED"
+        ],
+        "ended_seen": true,
+        "failed_business_calls": 0,
+        "business_calls_after_end": 0,
+        "boot_start_markers": 1,
+        "uptime_regressions": 0,
+        "application_status_samples": 194,
+        "last_app_uptime_s": 1973,
+        "invalid_sample_status_count": 0,
+        "minimum_logged_ram_bytes": 12928,
+        "ble_notification_errors": 0,
+        "pose_notification_errors": 0,
+        "protocol_ping_calls": 33,
+        "protocol_ping_errors": 0,
+        "pings_after_ended": 3,
+        "unexpected_disconnect_codes": [],
+        "maximum_durations_ms": {
+          "loop_max_ms": 3385,
+          "light_gap_max_ms": 3385,
+          "render_max_ms": 151,
+          "gc": 9,
+          "ble_start": 1255,
+          "sensors": 580,
+          "button": 1,
+          "light_adc": 1,
+          "display": 151,
+          "gnss": 97,
+          "ble_poll": 62,
+          "pose_notify": 94,
+          "audio": 1,
+          "net_connect": 204,
+          "idle": 1252,
+          "net_send": 3359,
+          "sd_step": 144,
+          "lbs": 1,
+          "pose_read": 2
+        },
+        "last_cloud_status": {
+          "phase_s": 0,
+          "network": "ONLINE",
+          "sinr_db": 38.0,
+          "budget": 37,
+          "rsrp_dbm": -73,
+          "phase": "ENDED",
+          "last_result": "CALLED",
+          "sent": 60,
+          "pings": 33,
+          "ping_errors": 0
+        },
+        "errors": []
+      },
+      "ble_parallel": {
+        "pass": true,
+        "environment_frames": 97,
+        "pose_frames": 388,
+        "readvertising": true
+      },
+      "platform": {
+        "first_window_receipt_verified": true,
+        "full_cycle_receipt_verified": true,
+        "source": "authenticated physical cabinet01 business-log UI; start 2026-10-21 09:33:00",
+        "raw_dom_rows": 120,
+        "unique_received_messages": 60,
+        "all_success": true,
+        "all_four_properties_valid": true,
+        "windows_by_received_time": [
+          {
+            "first": "2026-10-21 09:38:28",
+            "last": "2026-10-21 09:40:20",
+            "messages": 12
+          },
+          {
+            "first": "2026-10-21 09:43:31",
+            "last": "2026-10-21 09:45:23",
+            "messages": 12
+          },
+          {
+            "first": "2026-10-21 09:48:35",
+            "last": "2026-10-21 09:50:27",
+            "messages": 12
+          },
+          {
+            "first": "2026-10-21 09:53:38",
+            "last": "2026-10-21 09:55:30",
+            "messages": 12
+          },
+          {
+            "first": "2026-10-21 09:58:43",
+            "last": "2026-10-21 10:00:35",
+            "messages": 12
+          }
+        ],
+        "within_window_interval_range_s": [
+          7.0,
+          13.0
+        ],
+        "notes": "Server arrival intervals include latency; local schedule verified separately. Fixed-column duplicate DOM rows deduplicated by ticket."
+      },
+      "app_live_data_previously_user_confirmed": true,
+      "power_cycle_and_multi_day_soak_verified": false
+    }
+  },
+  "web_revision": {
+    "id": "20261021-notify-recovery",
+    "site_version": 5,
+    "site_commit": "b75357aa2763d05702190d0a43af6c62c71825f6",
+    "deployed": true,
+    "tests_passed": 15,
+    "notification_wait_ms": 8000,
+    "max_recovery_attempts_per_outage": 2,
+    "independent_of_mqtt_schedule": true,
+    "board_runtime_changed": false,
+    "ble_diagnostic_after_mqtt_ended": {
+      "environment_frames": 20,
+      "pose_frames": 80,
+      "passed": true
+    },
+    "production_receive_verified": true,
+    "production_verification": {
+      "date": "2026-10-21",
+      "browser": "Edge",
+      "first_time": "10:43:02",
+      "first_environment_packets": 32,
+      "first_pose_packets": 129,
+      "second_time": "10:44:04",
+      "second_environment_packets": 93,
+      "second_pose_packets": 376,
+      "mqtt_phase": "ENDED",
+      "mqtt_business_calls": 60,
+      "board_runtime_restarted": false,
+      "ble_notification_errors": 0,
+      "pose_notification_errors": 0
+    }
+  },
+  "github_publication": {
+    "prepared_on": "2026-10-21",
+    "forum_post": "https://forumschinese.quectel.com/t/topic/15421?u=huangshengping2025",
+    "scope": "Documentation, ignore rules, attribution and release packaging only; existing runtime files unchanged.",
+    "runtime_review_findings": [
+      "Qth boot-delay guard can suppress keepalive after ticks_diff half-period",
+      "Qth initialization ERROR has no automatic retry"
+    ],
+    "runtime_findings_fixed": false,
+    "original_project_license_selected": false,
+    "upstream_licenses_included": [
+      "Apache-2.0 reference text for UniKnect-derived material",
+      "MIT text for bundled Three.js"
+    ]
+  }
+}

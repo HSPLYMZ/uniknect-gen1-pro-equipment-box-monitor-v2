@@ -1,0 +1,7 @@
+{
+  "enabled": false,
+  "product_key": "CHANGE_ME",
+  "product_secret": "CHANGE_ME",
+  "device_key": "cabinet01",
+  "server": "mqtt://iot-south.quectelcn.com:1883"
+}

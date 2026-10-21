@@ -1,0 +1,4 @@
+# Preserve the exact bytes recorded by version_manifest.json and board readback.
+# In particular, core.autocrlf must not change source files after a fresh clone.
+* -text
+*.bin binary

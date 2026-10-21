@@ -1,0 +1,30 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+backups/
+device/config.py
+device/cloud_private.json
+cloud_debug/config_private.py
+cloud_debug/logs/
+
+# Local credentials and raw diagnostic output; keep example templates public.
+config.py
+*_private.py
+*_private.json
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+*.log
+*.jsonl
+*.bak
+
+# Local editor/OS files and release archives.
+.idea/
+.DS_Store
+Thumbs.db
+*.zip

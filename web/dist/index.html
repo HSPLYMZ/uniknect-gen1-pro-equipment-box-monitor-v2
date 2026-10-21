@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10191d">
+  <meta name="description" content="通过蓝牙直连 UniKnect V2，查看温湿度、光敏、实时曲线与开发板三轴倾斜姿态。">
+  <title>UniKnect V2 · 实时环境仪表盘</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs?v=20261021-notify"></script>
+</head>
+<body>
+  <main>
+    <header class="masthead">
+      <a class="brand" href="./" aria-label="UniKnect 仪表盘首页">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="2" width="11" height="11" rx="3"/><rect x="19" y="2" width="11" height="11" rx="3" opacity=".4"/><rect x="2" y="19" width="11" height="11" rx="3" opacity=".4"/><rect x="19" y="19" width="11" height="11" rx="3"/></svg>
+        <span>UniKnect <span class="version">V2</span></span>
+      </a>
+      <span class="local-note"><span class="small-dot"></span>蓝牙直连 · 数据留在本机</span>
+    </header>
+
+    <section class="intro">
+      <div><p class="eyebrow">ENVIRONMENT MONITOR</p><h1>看见环境的每一次变化<span>。</span></h1><p class="subtitle">蓝牙直连实时查看环境与姿态，不受云端定时上报影响。</p></div>
+      <div class="status-pill" id="statusPill" data-state="disconnected" role="status"><span class="status-dot"></span><span id="statusText">未连接设备</span></div>
+    </section>
+
+    <section class="connection-panel" aria-label="蓝牙设备连接">
+      <div class="connection-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m7 7 10 10-5 4V3l5 4L7 17"/></svg></div>
+      <div class="connection-copy"><h2 id="deviceName">连接你的 UniKnect</h2><p id="connectionHint">使用安卓或电脑 Chrome，点击右侧按钮选择 UniKnect_V2。</p></div>
+      <div class="connection-actions"><button id="disconnect" class="secondary" disabled>断开</button><button id="connect" class="primary"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10-5 4V3l5 4L7 17"/></svg><span>连接设备</span></button></div>
+    </section>
+    <p id="notice" class="notice" role="status" hidden></p>
+
+    <div class="section-label"><h2>实时读数</h2><span id="updatedAt">等待第一条设备数据</span></div>
+    <section class="metrics" id="metrics" data-fresh="false" aria-label="传感器实时数值">
+      <article class="metric temperature"><div class="metric-top"><h3><span class="sensor-dot"></span>温度</h3><span class="sensor-kind">AHT20</span></div><div class="measurement"><span id="temperature">—</span><span class="unit">℃</span></div><div class="metric-bottom"><span id="temperatureState">等待数据</span><span class="range-note">环境温度</span></div></article>
+      <article class="metric humidity"><div class="metric-top"><h3><span class="sensor-dot"></span>湿度</h3><span class="sensor-kind">AHT20</span></div><div class="measurement"><span id="humidity">—</span><span class="unit">%</span></div><div class="metric-bottom"><span id="humidityState">等待数据</span><span class="range-note">相对湿度</span></div></article>
+      <article class="metric light"><div class="metric-top"><h3><span class="sensor-dot"></span>光敏原始值</h3><span class="sensor-kind">ADC</span></div><div class="measurement"><span id="light">—</span><span class="unit small-unit">/ 65535</span></div><div class="metric-bottom"><span id="lightState" class="exposure" data-exposed="unknown">等待数据</span><span class="range-note">与板上屏幕同步</span></div></article>
+    </section>
+
+    <div class="section-label"><h2>开发板姿态</h2><span>三轴加速度 · 固定航向</span></div>
+    <section class="pose-panel" id="posePanel" data-fresh="false" aria-label="开发板三轴与3D倾斜姿态">
+      <div class="pose-viewport">
+        <div class="pose-toolbar"><span id="poseStatus" role="status">等待连接</span><button class="secondary" id="poseReset" disabled>恢复视角</button></div>
+        <canvas id="poseCanvas" role="img" aria-label="开发板长方体姿态，青色为正面，蓝灰色为背面，橙色标记为传感器正X方向"></canvas>
+        <p id="poseRenderHint" class="pose-render-hint">连接后接收三轴数据</p>
+      </div>
+      <div class="pose-readings">
+        <p class="eyebrow">LIS2DH12</p><h3>倾斜与翻转</h3>
+        <dl class="pose-values">
+          <div><dt><span class="axis-x">X</span> 加速度</dt><dd><strong id="accelX">—</strong><span>m/s²</span></dd></div>
+          <div><dt><span class="axis-y">Y</span> 加速度</dt><dd><strong id="accelY">—</strong><span>m/s²</span></dd></div>
+          <div><dt><span class="axis-z">Z</span> 加速度</dt><dd><strong id="accelZ">—</strong><span>m/s²</span></dd></div>
+          <div><dt>横滚角</dt><dd><strong id="poseRoll">—</strong></dd></div>
+          <div><dt>俯仰角</dt><dd><strong id="posePitch">—</strong></dd></div>
+        </dl>
+        <p class="pose-note">按传感器坐标显示，+X 标为板头参考，实物方向待核对。仅根据重力估算倾斜，无法测量水平转向；晃动时仅供参考。</p>
+        <div class="pose-session"><span id="posePackets">0 帧</span><span id="poseAge">尚无采样</span></div>
+      </div>
+    </section>
+
+    <div class="section-label chart-heading"><h2>变化曲线</h2><span><span class="legend-line"></span>最近 5 分钟 · 约每秒更新</span></div>
+    <section class="charts" aria-label="最近五分钟实时曲线">
+      <article class="chart-card"><div class="chart-title"><h3>温度趋势</h3><span>℃</span></div><div class="plot"><canvas id="temperatureChart" role="img" aria-label="温度曲线，尚未接收数据"></canvas><p class="plot-empty">连接设备后开始记录</p></div><div class="chart-foot"><span>5 分钟前</span><span>现在</span></div></article>
+      <article class="chart-card"><div class="chart-title"><h3>湿度趋势</h3><span>%</span></div><div class="plot"><canvas id="humidityChart" role="img" aria-label="湿度曲线，尚未接收数据"></canvas><p class="plot-empty">连接设备后开始记录</p></div><div class="chart-foot"><span>5 分钟前</span><span>现在</span></div></article>
+      <article class="chart-card"><div class="chart-title"><h3>光敏趋势</h3><span>原始 ADC</span></div><div class="plot"><canvas id="lightChart" role="img" aria-label="光敏曲线，尚未接收数据"></canvas><p class="plot-empty">连接设备后开始记录</p></div><div class="chart-foot"><span>5 分钟前</span><span>现在</span></div></article>
+    </section>
+
+    <section class="session-bar" aria-label="本次连接信息"><span><span class="small-dot" id="sessionDot"></span><span id="sessionText">本次尚未接收数据</span></span><span id="packetInfo">0 条有效数据</span></section>
+    <details class="guide"><summary>连接说明与光敏判断</summary><div class="guide-content"><p>在安卓 Chrome 或带蓝牙的电脑 Chrome 中打开此网页，点击“连接设备”，选择 <strong>UniKnect_V2</strong>。请先断开 nRF Connect 等其他客户端。浏览器会自动订阅数据，无需到系统蓝牙设置里配对。</p><p>当前光敏规则：原始值 ≤18000 判定暴露、板上红屏；≥24000 判定遮挡、板上黑屏；中间区域保持之前状态。当前实测暴露约 13000、遮住约 38000。ADC 是原始电信号，不是照度 lux。</p><p>超过 3 秒没有新数据会标为“数据已过期”。请保持页面在前台；锁屏或切换应用可能中断接收。历史只保存在当前页面内存中，刷新或重新连接后重新记录。</p></div></details>
+    <footer><span>UniKnect Gen1 Pro <span class="footer-separator">/</span> BLE 实时仪表盘</span><span>本地采样 · 只读连接 · 3D <a href="./vendor/THREE-LICENSE.txt">Three.js</a></span></footer>
+  </main>
+</body>
+</html>
